@@ -1,0 +1,41 @@
+# Output Directory
+target/
+
+# Java
+*.class
+
+# Java Package Files
+*.jar
+*.war
+*.ear
+
+# Zip Files
+*.rar
+*.zip
+*.7z
+*.tar
+*.gz
+
+# Eclipse
+.settings/
+.classpath
+.project
+
+# IntelliJ, based on http://devnet.jetbrains.net/docs/DOC-1186
+.idea/
+*.iml
+
+# logs and trace
+*.log
+*.trace
+*.dat
+
+# vi swap
+*.swp
+
+# Backup Files
+*.bak
+*.old
+
+# SVN metadata
+.svn/
