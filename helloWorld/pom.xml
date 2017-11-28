@@ -108,4 +108,30 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>docker</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.fabric8</groupId>
+                        <artifactId>docker-maven-plugin</artifactId>
+                        <version>0.23.0</version>
+                        <configuration>
+                            <images>
+                                <image>
+                                    <name>helloworld:${project.version}</name>
+                                    <alias>helloworld</alias>
+                                    <build>
+                                        <dockerFileDir>helloWorld</dockerFileDir>
+                                    </build>
+                                </image>
+                            </images>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
