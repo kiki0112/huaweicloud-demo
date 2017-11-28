@@ -118,17 +118,26 @@
                         <groupId>io.fabric8</groupId>
                         <artifactId>docker-maven-plugin</artifactId>
                         <version>0.23.0</version>
-                        <configuration>
-                            <images>
-                                <image>
-                                    <name>helloworld:${project.version}</name>
-                                    <alias>helloworld</alias>
-                                    <build>
-                                        <dockerFileDir>helloWorld</dockerFileDir>
-                                    </build>
-                                </image>
-                            </images>
-                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>docker-build</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>build</goal>
+                                </goals>
+                                <configuration>
+                                    <images>
+                                        <image>
+                                            <name>helloworld:${project.version}</name>
+                                            <alias>helloworld</alias>
+                                            <build>
+                                                <dockerFileDir>helloWorld</dockerFileDir>
+                                            </build>
+                                        </image>
+                                    </images>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
