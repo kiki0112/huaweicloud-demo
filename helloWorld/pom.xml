@@ -131,7 +131,7 @@
                                             <name>helloworld:${project.version}</name>
                                             <alias>helloworld</alias>
                                             <build>
-                                                <dockerFileDir>helloWorld</dockerFileDir>
+                                                <dockerFileDir>${project.basedir}</dockerFileDir>
                                             </build>
                                         </image>
                                     </images>
