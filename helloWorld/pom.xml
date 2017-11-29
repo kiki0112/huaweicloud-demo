@@ -115,26 +115,18 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>io.fabric8</groupId>
-                        <artifactId>docker-maven-plugin</artifactId>
-                        <version>0.23.0</version>
+                        <groupId>com.spotify</groupId>
+                        <artifactId>dockerfile-maven-plugin</artifactId>
+                        <version>1.3.6</version>
                         <executions>
                             <execution>
                                 <id>docker-build</id>
-                                <phase>package</phase>
                                 <goals>
                                     <goal>build</goal>
                                 </goals>
                                 <configuration>
-                                    <images>
-                                        <image>
-                                            <name>helloworld:${project.version}</name>
-                                            <alias>helloworld</alias>
-                                            <build>
-                                                <dockerFileDir>${project.basedir}</dockerFileDir>
-                                            </build>
-                                        </image>
-                                    </images>
+                                    <repository>helloworld</repository>
+                                    <tag>${project.version}</tag>
                                 </configuration>
                             </execution>
                         </executions>
